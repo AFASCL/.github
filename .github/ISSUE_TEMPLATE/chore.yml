@@ -1,0 +1,37 @@
+name: Chore / Técnico
+description: Tarea técnica, mantenimiento o refactor
+title: "[CHORE] "
+labels: ["chore"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Detalle técnico de la tarea
+      placeholder: Explicar qué se va a hacer
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivación
+      description: Por qué es necesaria esta tarea
+      placeholder: Deuda técnica, mantenimiento, mejora interna
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Riesgos
+      description: Posibles impactos o cuidados
+      placeholder: Compatibilidad, performance, regresiones
+
+  - type: checkboxes
+    id: deploy
+    attributes:
+      label: Deploy manual
+      options:
+        - label: Requiere deploy manual en TST
+        - label: Requiere deploy manual en PROD
