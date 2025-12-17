@@ -1,0 +1,37 @@
+name: Bug
+description: Reportar un error de funcionamiento
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Describí claramente el problema
+      placeholder: Qué pasó?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+      placeholder: Qué debería pasar?
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1.
+        2.
+        3.
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacto
+      options:
+        - Bloqueante producción
+        - Impacta funcionalidad crítica
+        - Impacto menor
