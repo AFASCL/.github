@@ -1,37 +1,53 @@
-# Guía rápida para devs nuevos
+# Guía rápida para desarrolladores
 
-Este equipo usa GitHub así:
+Ambientes:
+- TST
+- PROD
 
-Issue = trabajo
-Project = estado
-Milestone = entrega
-Tag = versión desplegada en PROD
+Deploy: manual
 
-Deploy manual en dos ambientes: TST y PROD.
+---
 
-## 1) Antes de empezar
-Tomá un Issue o creá uno (bug/feature/chore).
-Debe tener:
-- labels: tipo + área + prioridad
-- assignee
-- milestone
-- estar en el Project
+## 1. Antes de escribir código
+Todo trabajo empieza con un Issue.
 
-## 2) Estados (Project → Status)
-Backlog → Ready → In progress → In review → Ready for TST → Deployed to TST → Ready for PROD → Deployed to PROD
+---
 
-No usamos labels como “in-progress/testing/done”.
+## 2. Ramas
+- dev → integración / TST
+- main → producción
 
-## 3) Pull Request
-El PR debe referenciar el issue:
-Closes #123
+Para trabajar un Issue:
+1. Crear rama desde dev
+2. feature/ID-descripcion | bugfix/ID-descripcion | chore/ID-descripcion
+3. Commits en la rama
 
-## 4) Deploy manual
-Cuando el PR está mergeado:
-- Ready for TST → deploy TST → Deployed to TST
-- Validar → Ready for PROD → deploy PROD → Deployed to PROD
-Luego cerrar.
+---
 
-## 5) Milestone y tag
-Un milestone agrupa lo que va a una versión (ej: v1.3.0).
-Cuando todo está en PROD → crear tag/release v1.3.0.
+## 3. Integración
+
+Antes de integrar:
+git fetch origin
+git rebase origin/dev
+
+Luego:
+- PR liviano a dev con Closes #ID
+- o integración por el responsable
+
+Después:
+- borrar la rama del ticket
+
+---
+
+## 4. TST
+Deploy manual desde dev y validar.
+
+---
+
+## 5. PROD
+PR dev → main, deploy manual, cerrar issues y crear tag.
+
+---
+
+Regla clave:
+Nunca se mergea directo a main.
