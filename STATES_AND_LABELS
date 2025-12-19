@@ -1,0 +1,75 @@
+# Estados y Labels Oficiales
+
+Este documento define el **significado formal** de los estados del Project y el uso correcto de labels.
+
+---
+
+## Estados del Project
+
+- **Backlog**
+  - Issue creado, aún no priorizado
+
+- **Ready**
+  - Definido y listo para comenzar
+
+- **In progress**
+  - Desarrollo activo en rama del ticket
+
+- **In review**
+  - Rama lista / PR abierto / esperando integración
+
+- **Ready for TST**
+  - Integrado en `dev`, esperando deploy
+
+- **Deployed to TST**
+  - Deploy realizado en TST
+  - Incluye QA / validación funcional
+
+- **Ready for PROD**
+  - Validado en TST, listo para PROD
+
+- **Deployed to PROD**
+  - Deploy realizado en PROD
+  - Issue listo para cerrar
+
+---
+
+## Reglas de estados
+
+- El estado se maneja **solo desde el Project**
+- Los Issues pueden **retroceder de estado**
+- No existe el estado **Testing**
+- No existe el estado **Reopened**
+
+---
+
+## Labels
+
+Los labels describen **qué es el Issue**, no dónde está.
+
+### Tipo
+- `bug`
+- `feature`
+- `chore`
+
+### Área
+- `backend`
+- `frontend`
+- `infra`
+- `legacy`
+
+### Prioridad
+- `p0`
+- `p1`
+- `p2`
+
+### Labels opcionales
+- `blocked`
+- `needs-info`
+
+---
+
+## Regla para saber como utilizarlos
+
+Label  = qué es  
+Status = dónde está
