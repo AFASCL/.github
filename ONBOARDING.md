@@ -1,53 +1,65 @@
-# Guía rápida para desarrolladores
+# Onboarding – Guía rápida
 
-Ambientes:
-- TST
-- PROD
-
-Deploy: manual
+Esta guía explica **cómo trabajar un ticket día a día**.
 
 ---
 
-## 1. Antes de escribir código
-Todo trabajo empieza con un Issue.
+## 1. Antes de empezar
+
+- Todo trabajo comienza con un **Issue**
+- No se escribe código sin Issue
 
 ---
 
 ## 2. Ramas
-- dev → integración / TST
-- main → producción
 
-Para trabajar un Issue:
-1. Crear rama desde dev
-2. feature/ID-descripcion | bugfix/ID-descripcion | chore/ID-descripcion
-3. Commits en la rama
+- `dev` → integración / TST
+- `main` → producción
 
----
-
-## 3. Integración
-
-Antes de integrar:
-git fetch origin
-git rebase origin/dev
-
-Luego:
-- PR liviano a dev con Closes #ID
-- o integración por el responsable
-
-Después:
-- borrar la rama del ticket
+Para trabajar:
+1. Crear rama desde `dev`
+2. Nombrarla `feature/ID`, `bugfix/ID` o `chore/ID`
+3. Commits pequeños durante el trabajo
 
 ---
 
-## 4. TST
-Deploy manual desde dev y validar.
+## 3. Commits
+
+Durante el desarrollo:
+feat(123): agregar validaciones (WIP)
+
+Al integrar:
+feat(123): agregar validaciones
+
+- El commit final no debe tener `(WIP)`
+- El ticket queda como **1 commit**
 
 ---
 
-## 5. PROD
-PR dev → main, deploy manual, cerrar issues y crear tag.
+## 4. Integración
+
+1. Rebase contra `dev`
+2. Integración a `dev` (PR liviano o merge)
+3. Borrado de la rama
 
 ---
 
-Regla clave:
-Nunca se mergea directo a main.
+## 5. QA y TST
+
+- El deploy a TST se hace desde `dev`
+- QA valida cuando el Issue está en **Deployed to TST**
+- Si QA falla, el Issue vuelve a **In progress**
+
+---
+
+## 6. PROD
+
+- PR de `dev` → `main`
+- Deploy manual a PROD
+- Cierre del Issue y Milestone
+
+---
+
+## Regla final
+
+Nunca se mergea directo a `main`.
