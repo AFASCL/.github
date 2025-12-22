@@ -60,10 +60,8 @@ main  → PROD
 dev   → TST (integración)
 
 - Las ramas de trabajo salen **siempre desde `dev`**
-- Convención de nombres:
-  - `feature/ID-descripcion`
-  - `bugfix/ID-descripcion`
-  - `chore/ID-descripcion`
+- Convención de nombre:
+  - `txxx` (t de ticket, xxx del id del issue)
 
 Responsabilidades:
 - `main` y `dev` son gestionadas por el responsable de integración
