@@ -18,7 +18,7 @@ Esta guía explica **cómo trabajar un ticket día a día**.
 
 Para trabajar:
 1. Crear rama desde `dev`
-2. Nombrarla `feature/ID`, `bugfix/ID` o `chore/ID`
+2. Nombrarla `txxx` (t de ticket y xxx del ID del issue)
 3. Commits pequeños durante el trabajo
 
 ---
