@@ -154,4 +154,44 @@ No existe un estado separado "Testing".
 Issue     = trabajo  
 Project   = estado  
 Milestone = entrega  
+
+## 11. Automatización: auto-agregar Issues al Project
+
+El Project **AFA – Development** agrega automáticamente los Issues nuevos al tablero.
+
+> Nota: esto se configura **en el Project**, no en cada repositorio.
+
+### Motivo técnico
+GitHub limita la cantidad de workflows tipo **Auto-add to project**.  
+Por eso se usa este patrón en 2 pasos:
+
+### Workflow A — Auto-add to project
+Ruta:
+Project → AFA – Development → Workflows → Auto-add to project
+
+Configuración recomendada:
+- Filter:
+  - `is:issue is:open`
+- Action:
+  - Add the item to the project
+
+Este workflow **solo agrega** el Issue al Project.
+
+### Workflow B — Item added to project (setea Status)
+Ruta:
+Project → AFA – Development → Workflows → Item added to project
+
+Configuración recomendada:
+- When:
+  - When an item is added to the project
+- Action:
+  - Set field value:
+    - Field: `Status`
+    - Value: `Backlog`
+
+Este workflow se usa para asignar automáticamente el estado inicial del Issue.
+
+### Prueba
+1. Crear un Issue en cualquier repositorio de la org
+2. Verificar que aparece en el Project AFA – Development en la columna **Backlog**
 Tag       = versión en PROD
