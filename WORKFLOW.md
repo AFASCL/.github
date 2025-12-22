@@ -11,6 +11,22 @@ Deploy: **manual**
 
 ---
 
+## Vista general del flujo de estados
+
+```mermaid
+flowchart LR
+    Backlog --> Ready
+    Ready --> InProgress["In progress"]
+    InProgress --> InReview["In review"]
+    InReview --> ReadyTST["Ready for TST"]
+    ReadyTST --> DeployedTST["Deployed to TST"]
+    DeployedTST --> ReadyPROD["Ready for PROD"]
+    ReadyPROD --> DeployedPROD["Deployed to PROD"]
+
+    DeployedTST -- QA falla --> InProgress
+```
+---
+
 ## 1. Principios
 
 - Todo trabajo comienza con un **Issue**
