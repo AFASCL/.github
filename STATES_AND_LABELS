@@ -4,6 +4,22 @@ Este documento define el **significado formal** de los estados del Project y el 
 
 ---
 
+## Vista general de estados
+
+```mermaid
+stateDiagram-v2
+    [*] --> Backlog
+    Backlog --> Ready
+    Ready --> In_progress
+    In_progress --> In_review
+    In_review --> Ready_for_TST
+    Ready_for_TST --> Deployed_to_TST
+    Deployed_to_TST --> Ready_for_PROD
+    Ready_for_PROD --> Deployed_to_PROD
+    Deployed_to_TST --> In_progress : QA falla
+```
+---
+
 ## Estados del Project
 
 - **Backlog**
