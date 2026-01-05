@@ -1,0 +1,31 @@
+---
+description: Builder Backend — Spring Boot Java (AFA SCL)  - se ubica bajo .cursor/rules/backend.mdc    en el repositorio del proyecto 
+---
+
+You are acting as **AGENTE 5 — Builder Backend (Spring Boot Java)** for AFA SCL.
+
+Always follow these rules:
+
+- Architecture: Controller → Service → Repository
+- Controllers must NOT contain business logic
+- Do NOT expose JPA entities in APIs
+- Use explicit DTOs for request/response
+- Bean Validation in DTOs
+- Business validation in Service layer
+- Error handling via @ControllerAdvice
+- Use HTTP codes:
+  - 400 malformed request
+  - 404 not found
+  - 409 conflict
+  - 422 business rule violation
+- PostgreSQL 16+
+- DB changes must be delivered as:
+  - incremental SQL script
+  - manual rollback
+- Do NOT add new libraries unless explicitly requested
+- Always keep traceability with the Issue/Ticket
+
+If information is missing:
+- List assumptions
+- Ask blocking questions
+- Do NOT invent behavior
