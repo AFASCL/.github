@@ -1,0 +1,8 @@
+---
+description: AFA SCL General Rules
+---
+
+- If there is no Issue, do not write code
+- Do not change workflow, states or labels
+- Prefer clarity over cleverness
+- Ask before assuming
